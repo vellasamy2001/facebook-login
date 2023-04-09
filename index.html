@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facebook log in</title>
+    <style>
+       body{
+	   background-color:lightgreen;
+	    margin-top:7%;
+	   }
+     .container{
+        width:30%;
+	margin:0 auto;
+	background:#ffff;
+	border-radius:5px;
+	box-shadow:0px 0px 10px 0px #ccc;
+	background-color:#add8e68f;
+	padding:25px;
+      
+     }
+
+     input{
+        padding: 17px;
+        width:90%;
+        border-radius:5px;
+        font-size: 16px;
+        border:solid 1px rgb(212, 206, 206);
+     }
+    
+     button{
+        padding: 10px;
+        width:100%;
+        border-radius:5px;
+        background-color: blue;
+        border:1px solid blue;
+        color:#fff;
+        cursor: pointer;
+        font-size: 25px;
+     }
+     a {
+        color:blue;
+        text-decoration: none;
+     }
+     h1{
+        text-align: center;
+        color:blue;
+       
+     }
+     h3{
+        text-align: center;
+        
+     }
+
+    </style>
+</head>
+<body>
+   
+    <h1>Facebook</h1>
+    <div class="container">
+         <h3>Log in to Facebook</h3>
+    <form>
+        <input type="text"name="frist name" placeholder="Enter email address or phone number"  id="name">
+    <br> <br> 
+        <input type="password"name="email"  placeholder="password" id="password">
+        <br><br>
+       <button id="submit">Log in</button>
+       
+       <br><br>
+    <a href="#">Forgotten account? </a><a href="#"> Sign up for Facebook</a>
+    <br><br>
+</form>
+<div id="result" ></div>
+    </div>
+   
+
+    <script>
+        let form=document.querySelector("form");
+          form.addEventListener('submit',function(s){
+            s.preventDefault();
+        let lname=document.getElementById("name").value;
+        let lpass=document.getElementById("password").value;
+        let result=document.getElementById("result");
+        
+       let gname=localStorage.getItem("Name");
+			let gpass=localStorage.getItem("Pass");
+
+       if(lname == gname && lpass == gpass){
+        alert("success");
+       }
+       else{
+        alert("incorrect");
+       }
+        
+    })
+      
+
+
+
+    </script>
+</body>
+</html>
